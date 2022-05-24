@@ -1,0 +1,20 @@
+<div *ngIf="exercice">
+    <h2>{{ exercice.name | uppercase }} Details</h2>
+    <div>id: {{ exercice.id }}</div>
+    <div>
+      <label for="exercice-name">Exercice name: </label>
+      <input id="exercice-name" [(ngModel)]="exercice.name" placeholder="name">
+    </div>
+    <div *ngIf="!exercice.isFinished">
+        <button (click)="exerciceService.setStatus(indexExercice)"
+                [ngStyle]="{'background-color': 'green'}"
+                type="button">DONE
+        </button>
+    </div>
+    <div *ngIf="exercice.isFinished">
+        <button (click)="exerciceService.setStatus(indexExercice)"
+                [ngStyle]="{'background-color': 'blue'}"
+                type="button">START
+        </button>
+    </div>
+  </div>

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'trumpet-angular-app';
+  title = 'My Trumpet App';
+  isActive: boolean = false;
 }
