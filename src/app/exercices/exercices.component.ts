@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Exercice } from '../exercice';
+import { Subscription } from 'rxjs';
+import { Exercice } from '../models/exercice';
 import { ExerciceService } from '../services/exercices.service';
 
 @Component({
@@ -10,17 +11,18 @@ import { ExerciceService } from '../services/exercices.service';
 export class ExercicesComponent implements OnInit {
 
   exercices: any[] = [];
+  exerciceSubscription: Subscription | undefined;
   selectedExercice?: Exercice;
-  indexSelectedExercice: number = 0;
 
   constructor(private exerciceService: ExerciceService) {}
 
   ngOnInit(): void {
-    this.exercices = this.exerciceService.EXERCICES;
+    this.exerciceSubscription = this.exerciceService.exerciceSubject.subscribe(
+      (exercices: any[]) => {
+        this.exercices = exercices;
+      }
+    );
+    this.exerciceService.emitExerciceSubject();
   }
 
-  onSelect(exercice: Exercice, index: number): void {
-    this.selectedExercice = exercice
-    this.indexSelectedExercice = index;
-  }
 }

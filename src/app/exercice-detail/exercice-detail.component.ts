@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Exercice } from '../exercice';
+import { ActivatedRoute } from '@angular/router';
+import { Exercice } from '../models/exercice';
 import { ExerciceService } from '../services/exercices.service';
 
 @Component({
@@ -9,13 +10,16 @@ import { ExerciceService } from '../services/exercices.service';
 })
 export class ExerciceDetailComponent implements OnInit {
 
-  @Input() exercice?: Exercice
   @Input() indexExercice: number = 0;
-  isDone: boolean = false;
+  @Input() id: number = 0;
+  @Input() exercice?: Exercice
+  time: number = 0
 
-
-  constructor(public exerciceService: ExerciceService) { }
+  constructor(public exerciceService: ExerciceService,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id']
+    this.exercice = this.exerciceService.getExerciceById(this.id)
   }
 }
