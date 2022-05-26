@@ -9,6 +9,8 @@ import { ExerciceDetailComponent } from './app/exercice-detail/exercice-detail.c
 import { ExerciceService } from './app/services/exercices.service';
 import { StopwatchComponent } from './app/stopwatch/stopwatch.component';
 import { StopwatchService } from './app/services/stopwatch.service';
+import { SessionsComponent } from './app/sessions/sessions.component';
+import { SessionService } from './app/services/session.service';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { StopwatchService } from './app/services/stopwatch.service';
     AppComponent,
     ExercicesComponent,
     ExerciceDetailComponent,
-    StopwatchComponent
+    StopwatchComponent,
+    SessionsComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { StopwatchService } from './app/services/stopwatch.service';
   ],
   providers: [
     ExerciceService,
-    StopwatchService
+    StopwatchService,
+    SessionService
   ],
   bootstrap: [AppComponent]
 })

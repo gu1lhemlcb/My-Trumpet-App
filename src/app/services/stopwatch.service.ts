@@ -1,5 +1,5 @@
 import { Subject, Subscription } from "rxjs";
-import { Exercice } from "../models/exercice";
+import { Exercice } from "../models/exercice.model";
 
 export class StopwatchService {
     

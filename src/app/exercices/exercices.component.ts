@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Exercice } from '../models/exercice';
 import { ExerciceService } from '../services/exercices.service';
 
 @Component({
@@ -12,7 +11,6 @@ export class ExercicesComponent implements OnInit {
 
   exercices: any[] = [];
   exerciceSubscription: Subscription | undefined;
-  selectedExercice?: Exercice;
 
   constructor(private exerciceService: ExerciceService) {}
 
