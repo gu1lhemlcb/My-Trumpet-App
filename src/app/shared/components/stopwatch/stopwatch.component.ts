@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
-import { StopwatchService } from '../services/stopwatch.service';
+import { StopwatchService } from '../../../services/stopwatch.service';
 
 @Component({
   selector: 'app-stopwatch',

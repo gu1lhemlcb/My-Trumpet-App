@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Exercice } from '../models/exercice.model';
-import { ExerciceService } from '../services/exercices.service';
+import { Exercice } from '../../models/exercice.model';
+import { ExerciceService } from '../../services/exercices.service';
 
 @Component({
   selector: 'app-exercice-detail',

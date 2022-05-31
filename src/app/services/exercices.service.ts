@@ -31,6 +31,12 @@ export class ExerciceService {
         exercice.isFinished = true;
       }
     }
-    this.emitExerciceSubject()
+    this.emitExerciceSubject();
+  }
+
+  // TODO - CHANGE "any"
+  addExercice(exercice: any){
+    this.EXERCICES.push(exercice);
+    this.emitExerciceSubject();
   }
 }

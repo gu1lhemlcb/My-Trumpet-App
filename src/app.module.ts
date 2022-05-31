@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app/app-routing.module';
 import { AppComponent } from './app/app.component';
-import { ExercicesComponent } from './app/exercices/exercices.component';
-import { ExerciceDetailComponent } from './app/exercice-detail/exercice-detail.component';
+import { ExercicesComponent } from './app/exercices-components/exercices/exercices.component';
+import { ExerciceDetailComponent } from './app/exercices-components/exercice-detail/exercice-detail.component';
 import { ExerciceService } from './app/services/exercices.service';
-import { StopwatchComponent } from './app/stopwatch/stopwatch.component';
+import { StopwatchComponent } from './app/shared/components/stopwatch/stopwatch.component';
 import { StopwatchService } from './app/services/stopwatch.service';
 import { SessionsComponent } from './app/sessions/sessions.component';
 import { SessionService } from './app/services/session.service';
+import { ExerciceEditorComponent } from './app/exercices-components/exercice-editor/exercice-editor.component';
 
 
 @NgModule({
@@ -19,12 +20,14 @@ import { SessionService } from './app/services/session.service';
     ExercicesComponent,
     ExerciceDetailComponent,
     StopwatchComponent,
-    SessionsComponent
+    SessionsComponent,
+    ExerciceEditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ExerciceService,
