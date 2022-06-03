@@ -8,14 +8,14 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My Trumpet App';
-  authStatus: boolean = false;
+  // title = 'My Trumpet App';
+  // authStatus: boolean = false;
 
   constructor(private authService: AuthService){
     this.authService = authService;
   }
 
-  getAuthStatus(): boolean {
-    return this.authService.isAuth;
-  }
+  // getAuthStatus(): boolean {
+  //   return this.authService.isAuth;
+  // }
 }

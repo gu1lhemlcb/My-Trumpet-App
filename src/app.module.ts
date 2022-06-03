@@ -15,6 +15,7 @@ import { ExerciceEditorComponent } from './app/exercices-components/exercice-edi
 import { AuthComponent } from './app/auth/auth.component';
 import { AuthGuard } from './app/services/auth-guard.service';
 import { AuthService } from './app/services/auth.service';
+import { NavbarComponent } from './app/navbar/navbar.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AuthService } from './app/services/auth.service';
     StopwatchComponent,
     SessionsComponent,
     ExerciceEditorComponent,
-    AuthComponent
+    AuthComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
