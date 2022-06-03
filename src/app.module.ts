@@ -15,7 +15,6 @@ import { ExerciceEditorComponent } from './app/exercices-components/exercice-edi
 import { AuthComponent } from './app/auth/auth.component';
 import { AuthGuard } from './app/services/auth-guard.service';
 import { AuthService } from './app/services/auth.service';
-import { SharedService } from './app/shared/services/shared.services';
 
 
 @NgModule({
@@ -38,7 +37,6 @@ import { SharedService } from './app/shared/services/shared.services';
     AuthGuard,
     AuthService,
     ExerciceService,
-    SharedService,
     StopwatchService,
     SessionService
   ],

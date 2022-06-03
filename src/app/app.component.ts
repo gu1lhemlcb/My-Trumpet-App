@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { SharedService } from './shared/services/shared.services';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,9 +11,8 @@ export class AppComponent {
   title = 'My Trumpet App';
   authStatus: boolean = false;
 
-  constructor(private authService: AuthService, private sharedService: SharedService){
+  constructor(private authService: AuthService){
     this.authService = authService;
-    this.sharedService = sharedService;
   }
 
   getAuthStatus(): boolean {

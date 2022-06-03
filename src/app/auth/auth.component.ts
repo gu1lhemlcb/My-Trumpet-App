@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { SharedService } from '../shared/services/shared.services';
 
 @Component({
   selector: 'app-auth',
@@ -14,13 +13,11 @@ export class AuthComponent implements OnInit {
   loginForm: FormGroup;
   @Input() isAuthenticated: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService,
-              private sharedService: SharedService, private router: Router) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
       email: fb.control('', Validators.required),
       password: fb.control('', Validators.required)
     })
-    this.sharedService = sharedService;
   }
 
   ngOnInit(): void {
