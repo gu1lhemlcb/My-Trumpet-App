@@ -10,7 +10,6 @@ import { ExerciceService } from '../../services/exercices.service';
 })
 export class ExerciceDetailComponent implements OnInit {
 
-  @Input() indexExercice: number = 0;
   @Input() id: number = 0;
   @Input() exercice?: Exercice
   time: number = 0

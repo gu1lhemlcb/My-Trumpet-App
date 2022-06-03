@@ -12,6 +12,10 @@ import { StopwatchService } from './app/services/stopwatch.service';
 import { SessionsComponent } from './app/sessions/sessions.component';
 import { SessionService } from './app/services/session.service';
 import { ExerciceEditorComponent } from './app/exercices-components/exercice-editor/exercice-editor.component';
+import { AuthComponent } from './app/auth/auth.component';
+import { AuthGuard } from './app/services/auth-guard.service';
+import { AuthService } from './app/services/auth.service';
+import { SharedService } from './app/shared/services/shared.services';
 
 
 @NgModule({
@@ -21,7 +25,8 @@ import { ExerciceEditorComponent } from './app/exercices-components/exercice-edi
     ExerciceDetailComponent,
     StopwatchComponent,
     SessionsComponent,
-    ExerciceEditorComponent
+    ExerciceEditorComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,10 @@ import { ExerciceEditorComponent } from './app/exercices-components/exercice-edi
     ReactiveFormsModule
   ],
   providers: [
+    AuthGuard,
+    AuthService,
     ExerciceService,
+    SharedService,
     StopwatchService,
     SessionService
   ],

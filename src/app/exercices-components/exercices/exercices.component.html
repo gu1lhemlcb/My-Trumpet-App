@@ -1,13 +1,14 @@
-<div style="padding: 50px;">
-  <br>
-  <h2>Liste des exercices 🎶 :</h2>
-  <br>
-  <a routerLink="add">Ajouter un exercice</a>
-  <ul class="exercices">
-    <li *ngFor="let exercice of exercices; let i = index;" style="padding: 10px;;">
-        <a [id]="exercice.id" [routerLink]="[exercice.id]">
-          <span class="name">{{ exercice.name }} - {{ exercice.duration_minutes }} minutes</span><br>
-        </a>
-    </li>
-  </ul>
+<div style="padding: 20px;">
+  <a style="padding: 10px;font-size: 25px;" routerLink="add"> 📝 Ajouter un exercice</a>
+  <div class="row" style="padding: 10px;">
+    <div class="col-sm-6" style="width: 300px;height: 150px;" *ngFor="let exercice of exercices; let i = index;" >
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ exercice.name }}</h5>
+          <p class="card-text">{{ exercice.duration_minutes }} minutes</p>
+          <a [id]="exercice.id" [routerLink]="[exercice.id]" class="btn btn-primary">Voir l'exercice</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
