@@ -13,7 +13,6 @@ export class AuthComponent implements OnInit {
 
   loginForm: FormGroup;
   @Input() isAuthenticated: boolean = false;
-  @Output() authStatus = new EventEmitter<any>();
 
   constructor(private fb: FormBuilder, private authService: AuthService,
               private sharedService: SharedService, private router: Router) {
@@ -31,7 +30,6 @@ export class AuthComponent implements OnInit {
   login(): Promise<any> {
     return this.authService.logUser().then(() => {
         this.isAuthenticated = this.authService.isAuth;
-        this.authStatus.emit(this.isAuthenticated);
         this.router.navigate(['/']);
       });
   }
@@ -39,7 +37,6 @@ export class AuthComponent implements OnInit {
   logout(): void{
     this.isAuthenticated = false;
     this.authService.isAuth = false;
-    this.sharedService.changeStatus();
     this.router.navigate(['/']);
   }
 }

@@ -1,3 +1,4 @@
+import {Subject} from "rxjs";
 export class AuthService {
     isAuth: boolean = false;
 
