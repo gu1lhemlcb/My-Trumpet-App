@@ -1,0 +1,11 @@
+<div style="padding: 40px;">
+    <h2 routerLink="">👉 Planifier une session de cours</h2>
+    <br>
+    <h4>Mes dernières sessions:</h4>
+    <br>
+    <ul class="sessions">
+        <li *ngFor="let session of sessions">
+            {{ session.date | date }} : {{ session.feedback }}
+        </li>
+    </ul>
+</div>

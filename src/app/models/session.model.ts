@@ -2,6 +2,7 @@ export interface Session {
     id: number;
     // exercices: [];
     date: Date;
-    notes: string;
+    todo: string,
+    feedback: string;
     isFinished: boolean;
   }

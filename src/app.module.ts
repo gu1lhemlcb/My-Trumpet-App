@@ -9,13 +9,15 @@ import { ExerciceDetailComponent } from './app/exercices-components/exercice-det
 import { ExerciceService } from './app/services/exercices.service';
 import { StopwatchComponent } from './app/shared/components/stopwatch/stopwatch.component';
 import { StopwatchService } from './app/services/stopwatch.service';
-import { SessionsComponent } from './app/sessions/sessions.component';
+import { SessionsComponent } from './app/sessions-components/sessions/sessions.component';
 import { SessionService } from './app/services/session.service';
 import { ExerciceEditorComponent } from './app/exercices-components/exercice-editor/exercice-editor.component';
 import { AuthComponent } from './app/auth/auth.component';
 import { AuthGuard } from './app/services/auth-guard.service';
 import { AuthService } from './app/services/auth.service';
 import { NavbarComponent } from './app/navbar/navbar.component';
+import { HomeComponent } from './app/home/home.component';
+import { SessionEditorComponent } from './app/sessions-components/session-editor/session-editor.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { NavbarComponent } from './app/navbar/navbar.component';
     SessionsComponent,
     ExerciceEditorComponent,
     AuthComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    SessionEditorComponent
   ],
   imports: [
     BrowserModule,

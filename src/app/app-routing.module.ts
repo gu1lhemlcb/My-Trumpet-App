@@ -4,15 +4,17 @@ import { AuthComponent } from './auth/auth.component';
 import { ExerciceDetailComponent } from './exercices-components/exercice-detail/exercice-detail.component';
 import { ExerciceEditorComponent } from './exercices-components/exercice-editor/exercice-editor.component';
 import { ExercicesComponent } from './exercices-components/exercices/exercices.component';
+import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { SessionsComponent } from './sessions/sessions.component';
+import { SessionsComponent } from './sessions-components/sessions/sessions.component';
 
 const routes: Routes = [
+  { path: "", component: HomeComponent },
   { path: "auth", component: AuthComponent },
   { path: "exercices", component: ExercicesComponent },
   { path: "exercices/add", canActivate: [AuthGuard], component: ExerciceEditorComponent},
   { path: "exercices/:id", canActivate: [AuthGuard], component: ExerciceDetailComponent },
-  { path: "sessions", component: SessionsComponent}
+  { path: "sessions", canActivate: [AuthGuard], component: SessionsComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
