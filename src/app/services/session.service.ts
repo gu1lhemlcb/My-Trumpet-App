@@ -8,7 +8,7 @@ export class SessionService {
     private SESSIONS = [
         { id: 1, date: new Date("2022-05-20"), todo: "", feedback: "Frères Jacques OK, revoir Beirhut + lecture de notes.", isFinished: true },
         { id: 2, date: new Date("2022-05-13"), todo: "", feedback: "Reprendre lecture de notes 7-8-9 + Beihrut", isFinished: true },
-        { id: 3, date: new Date("2022-05-06"), todo: "", feedback: "Reprendre lecture de partition + Finaliser Beihrut", duration_minutes: 10, isFinished: true },
+        { id: 3, date: new Date("2022-05-06"), todo: "", feedback: "Reprendre lecture de partition + Finaliser Beihrut", isFinished: true },
       ];
 
   emitSessionSubject(){
@@ -36,5 +36,12 @@ export class SessionService {
       }
     }
     this.emitSessionSubject()
+  }
+
+  getUpcomingSessions() {
+    const unfinishedSessions = this.SESSIONS.filter((obj) => {
+      return obj.isFinished === false;
+    });
+    return unfinishedSessions
   }
 }

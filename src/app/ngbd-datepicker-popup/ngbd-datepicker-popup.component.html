@@ -1,0 +1,18 @@
+<div style="width: 300px;margin-left: auto;margin-right: auto;">
+    <div class="input-group" dir="ltr" [formGroup]="sessionForm">
+        <input
+            class="form-control"
+            placeholder="yyyy/m/d"
+            name="dp"
+            [(ngModel)]="date"
+            ngbDatepicker
+            #d="ngbDatepicker"
+            formControlName="date"
+        />
+        <button class="input-group-addon" (click)="d.toggle()" type="button">
+            📅
+        </button>
+    </div>
+    <br>
+    <hr/>
+</div>

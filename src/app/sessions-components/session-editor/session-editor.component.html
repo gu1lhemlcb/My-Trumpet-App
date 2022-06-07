@@ -1,1 +1,15 @@
-<p>session-editor works!</p>
+<div style="padding: 40px;width: 250px;">
+  <form [formGroup]="sessionForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <label for="name">Date: </label>
+      <app-ngbd-datepicker-popup [sessionForm]="sessionForm"></app-ngbd-datepicker-popup>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="description">Todo: </label>
+      <input type="text" class="form-control" id="todo" type="text" formControlName="todo">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+</div>

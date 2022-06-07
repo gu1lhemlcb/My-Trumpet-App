@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -18,6 +19,7 @@ import { AuthService } from './app/services/auth.service';
 import { NavbarComponent } from './app/navbar/navbar.component';
 import { HomeComponent } from './app/home/home.component';
 import { SessionEditorComponent } from './app/sessions-components/session-editor/session-editor.component';
+import { NgbdDatepickerPopupComponent } from './app/ngbd-datepicker-popup/ngbd-datepicker-popup.component';
 
 
 @NgModule({
@@ -31,13 +33,15 @@ import { SessionEditorComponent } from './app/sessions-components/session-editor
     AuthComponent,
     NavbarComponent,
     HomeComponent,
-    SessionEditorComponent
+    SessionEditorComponent,
+    NgbdDatepickerPopupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [
     AuthGuard,

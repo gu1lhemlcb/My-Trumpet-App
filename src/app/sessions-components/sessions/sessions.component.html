@@ -1,11 +1,25 @@
 <div style="padding: 40px;">
-    <h2 routerLink="">👉 Planifier une session de cours</h2>
+    <a style="font-size: 16px;" routerLink="add">👉 Planifier une session de cours</a>
+    <hr/>
     <br>
     <h4>Mes dernières sessions:</h4>
     <br>
     <ul class="sessions">
-        <li *ngFor="let session of sessions">
-            {{ session.date | date }} : {{ session.feedback }}
-        </li>
+        <ng-container *ngFor="let session of sessions">
+            <li *ngIf="session.isFinished">
+                <p>{{ session.date | date }} : {{ session.feedback }}</p>
+            </li>
+        </ng-container>
     </ul>
+    <hr>
+    <h4>Mes sessions à venir:</h4>
+    <br>
+    <ul *ngIf="hasUpcomingSessions" class="sessions">
+        <ng-container *ngFor="let session of sessions">
+            <li *ngIf="!session.isFinished">
+                    <p >{{ session.date | date }} : {{ session.todo }}</p>
+            </li>
+        </ng-container>
+    </ul>
+    <p *ngIf="!hasUpcomingSessions"> Tu n'as pas de cours à venir pour le moment</p>
 </div>

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Exercice } from 'src/app/models/exercice.model';
+// import { Exercice } from 'src/app/models/exercice.model';
 import { ExerciceService } from 'src/app/services/exercices.service';
 
 @Component({
@@ -13,7 +13,8 @@ export class ExerciceEditorComponent {
 
   exerciceForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private exerciceService: ExerciceService, private router: Router) {
+  constructor(private fb: FormBuilder, private exerciceService: ExerciceService,
+              private router: Router) {
     this.exerciceForm = this.fb.group({
       id: 23,
       name: fb.control('', Validators.required),
