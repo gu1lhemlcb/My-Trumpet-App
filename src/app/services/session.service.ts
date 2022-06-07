@@ -44,4 +44,8 @@ export class SessionService {
     });
     return unfinishedSessions
   }
+
+  getLastId(): number {
+    return this.SESSIONS[this.SESSIONS.length -1].id
+  }
 }

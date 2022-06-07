@@ -17,7 +17,7 @@ export class SessionEditorComponent {
               private router: Router) {
 
       this.sessionForm = this.fb.group({
-        id: 45,
+        id: this.sessionService.getLastId() + 1,
         date: fb.control("", Validators.required),
         todo: fb.control("", Validators.required),
         feedback: fb.control(""), // Not required as the session has not been finished yet

@@ -16,7 +16,7 @@ export class ExerciceEditorComponent {
   constructor(private fb: FormBuilder, private exerciceService: ExerciceService,
               private router: Router) {
     this.exerciceForm = this.fb.group({
-      id: 23,
+      id: this.exerciceService.getLastId() + 1,
       name: fb.control('', Validators.required),
       duration_minutes: fb.control(5, Validators.required),
       description: fb.control('', Validators.required),

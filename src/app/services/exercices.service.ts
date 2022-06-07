@@ -39,4 +39,8 @@ export class ExerciceService {
     this.EXERCICES.push(exercice);
     this.emitExerciceSubject();
   }
+
+  getLastId(){
+    return this.EXERCICES[this.EXERCICES.length -1].id
+  }
 }
